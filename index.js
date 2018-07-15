@@ -1,16 +1,16 @@
 var katzDeli = [];
+var x = 0;
 
-
-function takeANumber(katzDeli, name) {
-    katzDeli.push(name); 
+function takeANumber(katzDeli) {
+    x += 1;
     
-    return ("Welcome, " + name + ". " + "You are number " + katzDeli.length + " in line.");
+    katzDeli.push(x); 
+    
+    return x;
+    
 }
 
 function nowServing(katzDeli) { 
-  for(var i = 0; i < katzDeli.length; i++) {
-  }
-     
      if (katzDeli.length === 0) {
          return ("There is nobody waiting to be served!");
      }
@@ -22,9 +22,11 @@ function nowServing(katzDeli) {
 
 function currentLine(katzDeli) { 
   var array = [];
+  var x = 0;
  
   for(var i = 0; i < katzDeli.length; i++) { 
-      array.push(parseInt(i+1)  + '. ' + katzDeli[i])
+      x = x + 1;
+      array.push(x  + '. ' + katzDeli[i])
   }  
   
       if (katzDeli.length === 0) {
@@ -34,7 +36,5 @@ function currentLine(katzDeli) {
        return("The line is currently: " + array.join(', '));
       }
 
-  
-  
 }// end of currentLine
 
